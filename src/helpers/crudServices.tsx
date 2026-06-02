@@ -1,5 +1,7 @@
+const API_URL_BK = import.meta.env.API_URL_BK || 'http://localhost:8080';
+
 export const createService = async (data: any) => {
-    const urlEpisodes: string = `http://localhost:8080/service/`;
+    const urlEpisodes: string = `${API_URL_BK}/service/`;
     const response = await fetch(urlEpisodes, {
         method: 'POST',
         headers: {
@@ -11,7 +13,7 @@ export const createService = async (data: any) => {
 };
 
 export const updateService = async (data: any) => {
-    const urlEpisodes: string = `http://localhost:8080/service/`;
+    const urlEpisodes: string = `${API_URL_BK}/service/`;
     const response = await fetch(urlEpisodes, {
         method: 'PUT',
         headers: {
@@ -23,7 +25,7 @@ export const updateService = async (data: any) => {
 };
 
 export const deleteService = async (data: any) => {
-    const urlEpisodes: string = `http://localhost:8080/service/${data.service_id}`;
+    const urlEpisodes: string = `${API_URL_BK}/service/${data.service_id}`;
     const response = await fetch(urlEpisodes, {
         method: 'DELETE'
     });
