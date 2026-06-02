@@ -71,67 +71,69 @@ const CreateService = () => {
 
     return (
         <div className="container mt-5" style={{ maxWidth: '500px' }}>
-            <h2 className="text-center mb-4">Crear Servicio</h2>
-            <form onSubmit={onSubmit}>
-                <div className="mb-3">
-                    <label className="form-label">Nombre Servicio</label>
-                    <input 
-                        onChange={(e) => handleChange(e)}
-                        type="text"
-                        className="form-control"
-                        name="name"
-                        required />
-                </div>
+            <div className="card shadow-lg p-4 rounded">
+                <h2 className="text-center mb-4">Crear Servicio</h2>
+                <form onSubmit={onSubmit}>
+                    <div className="mb-3">
+                        <label className="form-label">Nombre Servicio</label>
+                        <input 
+                            onChange={(e) => handleChange(e)}
+                            type="text"
+                            className="form-control"
+                            name="name"
+                            required />
+                    </div>
 
-                <div className="mb-3">
-                    <label className="form-label">Descriipción</label>
-                    <input 
-                        onChange={(e) => handleChange(e)}
-                        type="text"
-                        name="description"
-                        className="form-control" />
-                </div>
+                    <div className="mb-3">
+                        <label className="form-label">Descripción</label>
+                        <input 
+                            onChange={(e) => handleChange(e)}
+                            type="text"
+                            name="description"
+                            className="form-control" />
+                    </div>
 
-                <div className="mb-3">
-                    <label className="form-label">Precio</label>
-                    <input 
-                        onChange={(e) => handleChange(e)}
-                        type="number" 
-                        name="price"
-                        className="form-control"
-                        required />
-                </div>
+                    <div className="mb-3">
+                        <label className="form-label">Precio</label>
+                        <input 
+                            onChange={(e) => handleChange(e)}
+                            type="number" 
+                            name="price"
+                            className="form-control"
+                            required />
+                    </div>
 
-                <div className="mb-3">
-                    <label className="form-label">Moneda</label>
-                    <input 
-                        onChange={(e) => handleChange(e)}
-                        type="text"
-                        name="currency"
-                        className="form-control" />
-                </div>
+                    <div className="mb-3">
+                        <label className="form-label">Moneda</label>
+                        <input 
+                            onChange={(e) => handleChange(e)}
+                            type="text"
+                            name="currency"
+                            className="form-control" />
+                    </div>
 
-                <div className="mb-3">
-                    <label className="form-label">Ubicación</label>
-                    <input 
-                        onChange={(e) => handleChange(e)}
-                        type="text"
-                        name="location"
-                        className="form-control"
-                        required />
-                </div>
+                    <div className="mb-3">
+                        <label className="form-label">Ubicación</label>
+                        <input 
+                            onChange={(e) => handleChange(e)}
+                            type="text"
+                            name="location"
+                            className="form-control"
+                            required />
+                    </div>
 
-                {
-                    formData.service_id ? (
-                        <>
-                            <button type="submit" className="btn btn-primary w-100">Guardar Cambios</button>
-                            <button className="btn btn-danger w-100" onClick={onDelete}>Eliminar Servicio</button>
-                        </>
-                    ) : (
-                        <button type="submit" className="btn btn-primary w-100">Crear Servicio</button>
-                    )
-                }
-            </form>
+                    {
+                        formData.service_id ? (
+                            <>
+                                <button type="submit" className="btn btn-primary w-100">Guardar Cambios</button>
+                                <button className="btn btn-danger w-100" onClick={onDelete}>Eliminar Servicio</button>
+                            </>
+                        ) : (
+                            <button type="submit" className="btn btn-primary w-100">Crear Servicio</button>
+                        )
+                    }
+                </form>
+            </div>
         </div>
     );
 }
