@@ -7,7 +7,7 @@ const Cart: React.FC = () => {
   useEffect(() => {
     const fetchCartData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/cart'); 
+        const response = await fetch('http://localhost:8080/cart'); 
         const data = await response.json();
         setCartItems(data);
         setLoading(false);
