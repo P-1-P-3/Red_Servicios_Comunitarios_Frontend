@@ -1,4 +1,4 @@
-const API_URL_BK = import.meta.env.API_URL_BK || 'http://localhost:8080';
+const API_URL_BK = import.meta.env.VITE_API_URL_BK || 'http://localhost:8080';
 
 export const createService = async (data: any) => {
     const urlEpisodes: string = `${API_URL_BK}/service/`;
