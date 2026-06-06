@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+const API_URL_BK = import.meta.env.VITE_API_URL_BK || 'http://localhost:8080';
 
 function Register() {
   const [form, setForm] = useState({
@@ -27,7 +28,7 @@ function Register() {
     }
 
     try {
-      const response = await fetch("http://localhost:8080/users/register", {
+      const response = await fetch(`${API_URL_BK}/users/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+const API_URL_BK = import.meta.env.VITE_API_URL_BK || 'http://localhost:8080';
 
 const Cart: React.FC = () => {
   const [cartItems, setCartItems] = useState<any[]>([]);
@@ -7,7 +8,7 @@ const Cart: React.FC = () => {
   useEffect(() => {
     const fetchCartData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/cart'); 
+        const response = await fetch(`${API_URL_BK}/cart`); 
         const data = await response.json();
         setCartItems(data);
         setLoading(false);
