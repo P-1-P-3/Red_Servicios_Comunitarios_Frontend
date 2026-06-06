@@ -10,7 +10,7 @@ const Cart: React.FC = () => {
       try {
         const response = await fetch(`${API_URL_BK}/cart`); 
         const data = await response.json();
-        setCartItems(data);
+        setCartItems(data?.datos || []);
         setLoading(false);
       } catch (error) {
         console.error("Error conectando con el backend:", error);
